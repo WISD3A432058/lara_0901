@@ -18,7 +18,9 @@ class AdminPostsController extends Controller
 
     public function store(PostRequest $request)
     {
+        //將表單送過來的資料用 Model 寫入資料庫
         Post::create($request->all());
+        //設定頁面跳轉
         return redirect()->route('admin.posts.index');
     }
 
