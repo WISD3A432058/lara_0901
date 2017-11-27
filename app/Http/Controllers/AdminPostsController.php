@@ -35,4 +35,11 @@ class AdminPostsController extends Controller
         $data=['post'=>$post];
         return view('admin.posts.edit',$data);
     }
+
+    public function update(Request $request,$id)
+    {
+        $post=Post::find($id);
+        $post->update($request->all());
+        return redirect()->route('admin.posts.index');
+    }
 }
