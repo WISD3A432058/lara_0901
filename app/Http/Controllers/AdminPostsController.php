@@ -16,7 +16,7 @@ class AdminPostsController extends Controller
         return view('admin.posts.index', $data);
     }
 
-    public function store(PostRequest $request)
+    public function store(Request $request)
     {
         //將表單送過來的資料用 Model 寫入資料庫
         Post::create($request->all());
